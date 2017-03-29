@@ -1,0 +1,30 @@
+language: cpp
+
+sudo:
+    - required
+
+os:
+  - linux
+
+compiler:
+  - g++
+  - gcc
+
+branches:
+  only:
+    - master
+
+before_install:
+  - sudo apt-get-repository --yes ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq mpich2 libmpich2-3 libmpich2-dev
+  - sudo apt-get install -qq g++-4.8.5
+  # - source ./install-cuda.sh
+
+install:
+  - export CXX="g++-4.8.5" CC="gcc-4.8.5"
+  - cmake . -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_C_COMPILER=${CC}
+  - make
+
+script:
+  - ./ci.sh
