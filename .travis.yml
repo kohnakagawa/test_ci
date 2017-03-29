@@ -22,7 +22,7 @@ before_install:
   # - source ./install-cuda.sh
 
 install:
-  - export CXX="g++-4.8.5" CC="gcc-4.8.5"
+  - export CXX="g++-4.8" CC="gcc-4.8"
   - cmake . -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_C_COMPILER=${CC}
   - make
 
@@ -34,5 +34,5 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8.5
-      - gcc-4.8.5
+      - g++-4.8
+      - gcc-4.8
