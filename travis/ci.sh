@@ -1,6 +1,7 @@
 #!/bin/sh
 
-export OMP_NUM_THREADS=2
+export OMP_NUM_THREADS=4
+./test_omp
 
-
-mpirun -np 1 ./mdacp ./run_cfg/input
+mpirun -np 4 ./test_mpi
+mpijob ./test_mpi
