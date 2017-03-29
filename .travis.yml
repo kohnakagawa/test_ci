@@ -18,7 +18,7 @@ before_install:
   - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
   - sudo apt-get install -qq mpich2 libmpich2-3 libmpich2-dev
-  - source ./install-cuda.sh
+  # - source ./install-cuda.sh
 
 install:
   - export MPI_CXX="mpicxx" MPI_CC="mpicc" CXX11="g++-4.8"
