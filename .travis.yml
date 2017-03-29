@@ -21,7 +21,7 @@ before_install:
   # - source ./install-cuda.sh
 
 install:
-  - export CXX="g++-4.8" CC="gcc-4.8"
+  - export CXX="mpicxx" CC="mpicc"
   - cmake . -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_C_COMPILER=${CC}
   - make
 
